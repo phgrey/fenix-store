@@ -1,8 +1,8 @@
-require 'fenix/common'
-Fenix::Common.autoload_dir __FILE__
-
 module Fenix
   module Store
-    VERSION = "0.1.0"
+
   end
 end
+
+require 'active_support/dependencies'
+ActiveSupport::Dependencies.autoload_paths << File.dirname(File.dirname(__FILE__))

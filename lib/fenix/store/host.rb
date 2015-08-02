@@ -4,7 +4,7 @@ module Fenix::Store
     has_many :sources
     has_many :installs
     has_many :repositories, through: :sources
-    #params: system_installer {apt|yum...}
+    #params: system_installer {apt|yum...}, uname
 
     def set_sources srcs
       seen = (Repository.find_or_create_several(srcs.filter{|s|!s.has_key?('repository_id')}).map{|id| {'repository_id' => id}} +
